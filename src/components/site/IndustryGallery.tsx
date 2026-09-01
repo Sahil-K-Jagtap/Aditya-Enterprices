@@ -15,18 +15,23 @@ export function IndustryGallery() {
     <section className="relative bg-black px-6 py-32 text-white">
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#000_0%,#0a0d0f_50%,#000_100%)]" />
       <div className="relative mx-auto max-w-6xl">
-        <div className="mb-14 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
           <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
             Industry applications
           </span>
-          <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+          <h2 className="mt-4 max-w-3xl text-5xl font-bold tracking-tight md:text-6xl">
             Finishes trusted across{" "}
             <span className="bg-gradient-to-r from-white via-white/70 to-white/30 bg-clip-text text-transparent">
               six sectors
             </span>
           </h2>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        </motion.div>
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((ind, i) => (
             <motion.div
               key={ind.name}

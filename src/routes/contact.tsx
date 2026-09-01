@@ -59,16 +59,21 @@ function ContactPage() {
             <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
               <MapPin className="h-6 w-6 text-yellow-600" />
               <div className="mt-4 text-sm text-gray-500">Facility</div>
-              <div className="mt-1 text-lg font-semibold text-[#130B29]">
+              <a
+                href="https://maps.app.goo.gl/x43jxXPCLZxDKrGg6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 block text-lg font-semibold text-[#130B29] hover:underline"
+              >
                 SR No. 95/1, Landge Nagar, Pune Nashik Highway, Bhosari, Pune-411039
-              </div>
+              </a>
             </div>
           </div>
 
           <div className="mt-14 overflow-hidden rounded-3xl border border-gray-200 shadow-xl">
             <iframe
               title="Aditya Enterprises facility location"
-              src="https://www.google.com/maps?q=MIDC+Bhosari+Pune&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.9592476140417!2d73.84387597595568!3d18.639293582477383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c778f0fdf0d1%3A0x7536a6807d7c070c!2sAditya%20Enterprises!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
               className="h-[420px] w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

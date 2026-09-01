@@ -111,17 +111,22 @@ export function Navbar() {
                   </div>
                 </a>
                 
-                <div className="group flex items-start gap-5 rounded-2xl border border-white/5 bg-white/[0.02] p-4 transition-all duration-300 hover:bg-white/[0.06] hover:border-white/20">
+                <a 
+                  href="https://maps.app.goo.gl/x43jxXPCLZxDKrGg6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-5 rounded-2xl border border-white/5 bg-white/[0.02] p-4 transition-all duration-300 hover:bg-white/[0.06] hover:border-white/20"
+                >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 group-hover:scale-110 group-hover:bg-white group-hover:text-black">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
                     <div className="text-xs font-semibold uppercase tracking-widest text-white/40">Headquarters</div>
-                    <div className="mt-1 text-sm font-medium leading-relaxed text-white/80">
+                    <div className="mt-1 text-sm font-medium leading-relaxed text-white/80 group-hover:text-white">
                       SR No. 95/1, Landge Nagar, <br />Pune Nashik Highway, Bhosari, <br />Pune-411039, Maharashtra, India
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </DialogContent>
