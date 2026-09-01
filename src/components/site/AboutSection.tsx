@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 const stats = [
-  { k: "16", v: "Years in operation" },
+  { k: "20", v: "Years in operation" },
   { k: "Global", v: "Worldwide reach" },
   { k: "ISO 9001", v: "Certified quality system" },
   { k: "0.4%", v: "Batch rejection rate FY24" },
@@ -27,7 +27,7 @@ export function AboutSection() {
             About us
           </span>
           <h2 className="mt-4 max-w-3xl text-5xl font-bold tracking-tight md:text-6xl">
-            Sixteen years of{" "}
+            20 years of{" "}
             <span className="bg-gradient-to-r from-white via-white/70 to-white/30 bg-clip-text text-transparent">
               pioneering excellence
             </span>
@@ -35,7 +35,7 @@ export function AboutSection() {
           <div className="mt-6 grid gap-10 lg:grid-cols-4 lg:gap-4 lg:items-center">
             <div className="space-y-4 lg:col-span-3">
               <p className="text-lg text-white/60">
-                Established in 2010, Aditya Enterprises caters to the needs of customers worldwide 
+                Aditya Enterprises caters to the needs of customers worldwide 
                 with a wide range of products. Foreseeing the vital role that Aluminium would play 
                 in the future, we invested in technology and quality assurance, working towards a 
                 position of undisputed leadership in anodizing. Our products are used in diverse 

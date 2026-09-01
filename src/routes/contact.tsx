@@ -30,13 +30,24 @@ function ContactPage() {
             Talk to our finishing team
           </h1>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
               <Phone className="h-6 w-6 text-yellow-600" />
               <div className="mt-4 text-sm text-gray-500">Call the works</div>
-              <a href="tel:+919850292893" className="mt-1 block text-lg font-semibold text-[#130B29]">
-                +91 9850292893
-              </a>
+              <div className="mt-2 space-y-4">
+                <div>
+                  <a href="tel:+919850292893" className="block text-lg font-semibold text-[#130B29]">
+                    +91 9850292893
+                  </a>
+                  <div className="mt-1 text-sm text-gray-500">Mr. Sachin Kirdak</div>
+                </div>
+                <div>
+                  <a href="tel:+918208302347" className="block text-lg font-semibold text-[#130B29]">
+                    +91 8208302347
+                  </a>
+                  <div className="mt-1 text-sm text-gray-500">Mr. Sunil Kirdak</div>
+                </div>
+              </div>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
               <Mail className="h-6 w-6 text-yellow-600" />

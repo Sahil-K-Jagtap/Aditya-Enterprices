@@ -250,52 +250,6 @@ function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* ── Process Steps ── */}
-      <section className="mx-auto max-w-5xl px-6 py-24 md:px-16">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-12"
-        >
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
-            How It Works
-          </span>
-          <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
-            Our process, step by step
-          </h2>
-        </motion.div>
-
-        <div className="grid gap-6">
-          {service.processSteps.map((step, i) => (
-            <motion.div
-              key={step.step}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{
-                duration: 0.5,
-                delay: i * 0.1,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="group flex items-start gap-6 rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition-all duration-300 hover:border-white/15 hover:bg-white/[0.04]"
-            >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 text-lg font-bold text-white transition-all duration-300 group-hover:bg-white group-hover:text-black">
-                {String(i + 1).padStart(2, "0")}
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">
-                  {step.step}
-                </h3>
-                <p className="mt-2 text-base leading-relaxed text-white/80">
-                  {step.detail}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
       {/* ── Benefits Grid ── */}
       <section className="bg-[#050505] px-6 py-24 md:px-16">
@@ -345,43 +299,6 @@ function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* ── Technical Specs ── */}
-      <section className="mx-auto max-w-5xl px-6 py-24 md:px-16">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-12"
-        >
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
-            Specifications
-          </span>
-          <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
-            Technical data
-          </h2>
-        </motion.div>
-
-        <div className="overflow-hidden rounded-2xl border border-white/10">
-          {service.specs.map((spec, i) => (
-            <motion.div
-              key={spec.label}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-              className={`flex items-center justify-between px-8 py-5 ${
-                i % 2 === 0 ? "bg-white/[0.02]" : "bg-white/[0.04]"
-              }`}
-            >
-              <span className="text-base font-medium text-white/80">
-                {spec.label}
-              </span>
-              <span className="text-base font-bold text-white">{spec.value}</span>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
       {/* ── Applications ── */}
       <section className="bg-[#050505] px-6 py-24 md:px-16">

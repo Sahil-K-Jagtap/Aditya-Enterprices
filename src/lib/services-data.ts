@@ -244,7 +244,7 @@ export const servicesData: ServiceData[] = [
     longDesc:
       "Chromating (also known as chemical conversion coating or Alodine treatment) creates a thin, protective chromate film on aluminium surfaces. This process is widely used as a pre-treatment before painting or powder coating because it dramatically improves paint adhesion and provides a baseline layer of corrosion resistance. It is also used as a standalone finish where lightweight protection is sufficient.",
     image: chromating,
-    video: "/videos/chromating.mp4",
+    video: "/videos/chromating-texture.mp4",
     gallery: [
       "/gallery/chromating_1.png",
       "/gallery/chromating_2.png",
@@ -314,7 +314,7 @@ export const servicesData: ServiceData[] = [
     longDesc:
       "Glass bead blasting propels fine spherical glass media at high velocity against aluminium surfaces to create a smooth, uniform matte texture. Unlike angular abrasives, glass beads do not cut or damage the surface — they gently peen it, producing a satin finish that hides machining marks, tool lines and minor surface imperfections. This makes it the ideal pre-treatment before anodizing when you need a perfectly even, professional appearance.",
     image: blasting,
-    video: "/videos/blasting.mp4",
+    video: "/videos/glass-bead-blasting.mp4",
     gallery: [
       "/gallery/blasting_1.png",
       "/gallery/blasting_2.png",

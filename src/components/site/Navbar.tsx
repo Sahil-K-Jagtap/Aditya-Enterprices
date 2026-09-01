@@ -81,19 +81,22 @@ export function Navbar() {
                 </p>
               </DialogHeader>
               <div className="mt-8 grid gap-4">
-                <a 
-                  href="tel:+919850292893" 
-                  className="group flex items-center gap-5 rounded-2xl border border-white/5 bg-white/[0.02] p-4 transition-all duration-300 hover:bg-white/[0.06] hover:border-white/20"
-                >
+                <div className="group flex items-start gap-5 rounded-2xl border border-white/5 bg-white/[0.02] p-4 transition-all duration-300 hover:bg-white/[0.06] hover:border-white/20">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 group-hover:scale-110 group-hover:bg-white group-hover:text-black">
                     <Phone className="h-5 w-5" />
                   </div>
-                  <div>
-                    <div className="text-xs font-semibold uppercase tracking-widest text-white/40">Direct Line</div>
-                    <div className="text-lg font-bold text-white">+91 9850292893</div>
-                    <div className="text-xs text-white/50">Mr. Sachin Kirdak</div>
+                  <div className="flex flex-col gap-3">
+                    <div>
+                      <div className="text-xs font-semibold uppercase tracking-widest text-white/40">Direct Line</div>
+                      <a href="tel:+919850292893" className="mt-1 block text-lg font-bold text-white hover:text-white/80">+91 9850292893</a>
+                      <div className="text-xs text-white/50">Mr. Sachin Kirdak</div>
+                    </div>
+                    <div>
+                      <a href="tel:+918208302347" className="block text-lg font-bold text-white hover:text-white/80">+91 8208302347</a>
+                      <div className="text-xs text-white/50">Mr. Sunil Kirdak</div>
+                    </div>
                   </div>
-                </a>
+                </div>
                 
                 <a 
                   href="mailto:adityaentp123@gmail.com" 

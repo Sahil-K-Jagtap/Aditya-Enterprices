@@ -10,12 +10,12 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Sixteen years of precision anodizing and metal finishing from our Pune facility.",
+          "20 years of precision anodizing and metal finishing from our Pune facility.",
       },
       { property: "og:title", content: "About Aditya Enterprises" },
       {
         property: "og:description",
-        content: "Sixteen years of precision anodizing from Pune.",
+        content: "20 years of precision anodizing from Pune.",
       },
     ],
   }),
@@ -35,10 +35,10 @@ function AboutPage() {
               About us
             </span>
             <h1 className="mt-4 text-5xl font-bold tracking-tight text-[#130B29] md:text-6xl">
-              Sixteen years of precision anodizing
+              20 years of precision anodizing
             </h1>
             <p className="mt-6 max-w-3xl text-lg text-gray-600">
-              Established in 2010, Aditya Enterprises caters to the needs of customers 
+              Aditya Enterprises caters to the needs of customers 
               worldwide with a wide range of products. Foreseeing the vital role that Aluminium 
               would play in the future, we invested in technology and quality assurance, working 
               towards a position of undisputed leadership in anodizing.
@@ -47,7 +47,7 @@ function AboutPage() {
 
           <div className="mt-16 grid gap-8 md:grid-cols-3">
             {[
-              { k: "16", v: "Years in operation" },
+              { k: "20", v: "Years in operation" },
               { k: "180+", v: "Skilled operators & engineers" },
               { k: "ISO 9001", v: "Certified quality system" },
             ].map((s) => (

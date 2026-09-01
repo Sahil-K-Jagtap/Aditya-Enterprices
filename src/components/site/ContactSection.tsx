@@ -1,13 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
-const items = [
-  {
-    icon: Phone,
-    label: "Call the works",
-    value: "+91 9850292893",
-    href: "tel:+919850292893",
-  },
+const contactItems = [
   {
     icon: Mail,
     label: "Email us",
@@ -20,6 +14,11 @@ const items = [
     value: "SR No. 95/1, Landge Nagar, Pune Nashik Highway, Bhosari, Pune-411039",
     href: "https://maps.app.goo.gl/92ZG7MYZ1fWZtmRN9",
   },
+];
+
+const phoneContacts = [
+  { name: "Mr. Sachin Kirdak", number: "+91 9850292893", href: "tel:+919850292893" },
+  { name: "Mr. Sunil Kirdak", number: "+91 8208302347", href: "tel:+918208302347" },
 ];
 
 export function ContactSection() {
@@ -51,8 +50,30 @@ export function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="mt-14 grid gap-4 md:grid-cols-3">
-          {items.map((it, i) => {
+        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {/* Phone contacts — single card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            className="rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl transition-colors hover:border-white/25"
+          >
+            <Phone className="h-6 w-6 text-white/80" />
+            <div className="mt-6 text-xs uppercase tracking-widest text-white/40">
+              Call the works
+            </div>
+            <div className="mt-4 space-y-3">
+              {phoneContacts.map((pc) => (
+                <a key={pc.name} href={pc.href} className="block">
+                  <div className="text-lg font-semibold text-white">{pc.number}</div>
+                  <div className="text-sm text-white/50">{pc.name}</div>
+                </a>
+              ))}
+            </div>
+          </motion.div>
+          {/* Other contact items */}
+          {contactItems.map((it, i) => {
             const Icon = it.icon;
             const inner = (
               <>
@@ -71,7 +92,7 @@ export function ContactSection() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: 0.5, delay: (i + 2) * 0.1 }}
                 className="rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl transition-colors hover:border-white/25"
               >
                 {it.href ? <a href={it.href} target="_blank" rel="noopener noreferrer">{inner}</a> : inner}

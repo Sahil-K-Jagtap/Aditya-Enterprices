@@ -130,8 +130,8 @@ export function HeroScrollSequence() {
           opacity={cardsOpacity}
           className="absolute right-4 top-1/2 z-30 hidden w-64 -translate-y-1/2 md:block"
         >
-          <div className="text-4xl font-bold text-white">Worldwide</div>
-          <div className="mt-1 text-sm font-medium text-white/90">Catering to exact customer requirements globally</div>
+          <div className="text-4xl font-bold text-white">Industry applications</div>
+          <div className="mt-1 text-sm font-medium text-white/90">Finishes trusted across six sectors</div>
         </GlassCard>
 
         <GlassCard
