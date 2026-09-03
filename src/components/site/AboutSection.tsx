@@ -35,18 +35,18 @@ export function AboutSection() {
           <div className="mt-6 grid gap-10 lg:grid-cols-4 lg:gap-4 lg:items-center">
             <div className="space-y-4 lg:col-span-3">
               <p className="text-lg text-white/60">
-                Aditya Enterprises caters to the needs of customers worldwide 
-                with a wide range of products. Foreseeing the vital role that Aluminium would play 
-                in the future, we invested in technology and quality assurance, working towards a 
-                position of undisputed leadership in anodizing. Our products are used in diverse 
-                segments ranging from constructions to consumer durables, transport to textiles, 
+                Aditya Enterprises caters to the needs of customers worldwide
+                with a wide range of products. Foreseeing the vital role that Aluminium would play
+                in the future, we invested in technology and quality assurance, working towards a
+                position of undisputed leadership in anodizing. Our products are used in diverse
+                segments ranging from constructions to consumer durables, transport to textiles,
                 and irrigation to electrification.
               </p>
               <p className="text-lg text-white/60">
-                Every great accomplishment begins with a dream & every dream needs people who can 
-                make it come true. Aditya Enterprises is a cutting-edge organization with a 
-                combination of highly talented people, pioneering in anodizing and chromating, 
-                backed up by advanced technologies and a dedicated customer-focused culture. 
+                Every great accomplishment begins with a dream & every dream needs people who can
+                make it come true. Aditya Enterprises is a cutting-edge organization with a
+                combination of highly talented people, pioneering in anodizing and chromating,
+                backed up by advanced technologies and a dedicated customer-focused culture.
                 ‘So everything you need is here, look no further’.
               </p>
             </div>

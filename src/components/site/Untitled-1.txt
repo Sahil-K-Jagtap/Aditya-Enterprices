@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e7e8e6" />
+
+    <title>UMANO DESIGN STUDIO | Your Dedicated Senior Product Designer</title>
+    <meta name="description" content="A dedicated senior product designer embedded in your team. Unlimited design requests, 4-day delivery, flexible subscription. Mobile apps, SaaS, websites and design systems for startups and scale-ups." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://umanodesign.studio/" />
+    <meta property="og:title" content="UMANO DESIGN STUDIO | Your Dedicated Senior Product Designer" />
+    <meta property="og:description" content="A dedicated senior product designer embedded in your team. Unlimited design requests, 4-day delivery, flexible subscription. Pause or cancel anytime." />
+    <meta property="og:image" content="https://umanodesign.studio/og-image.png" />
+    <meta property="og:site_name" content="UMANO DESIGN STUDIO" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://umanodesign.studio/" />
+    <meta name="twitter:title" content="UMANO DESIGN STUDIO | Your Dedicated Senior Product Designer" />
+    <meta name="twitter:description" content="A dedicated senior product designer embedded in your team. Unlimited design requests, 4-day delivery, flexible subscription. Pause or cancel anytime." />
+    <meta name="twitter:image" content="https://umanodesign.studio/og-image.png" />
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="product designer, freelance designer, design subscription, UX design, UI design, mobile app design, SaaS design, website design, design systems, startup design, scale-up design" />
+    <meta name="author" content="UMANO DESIGN STUDIO" />
+    <link rel="canonical" href="https://umanodesign.studio/" />
+
+    <!-- Preload LCP-critical assets -->
+    <link rel="preload" as="image" type="image/webp" href="/assets/105e7cd3a106296d90d081af3766923516632143.webp" />
+    <link rel="preload" as="font" type="font/otf" href="/fonts/AMLeCygne-Noir.otf" crossorigin />
+
+    <!-- Inter font preloaded (self-hosted, no external requests) -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin.woff2" crossorigin />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "UMANO DESIGN STUDIO",
+      "url": "https://umanodesign.studio",
+      "description": "A dedicated senior product designer embedded in your team. Unlimited design requests, 4-day delivery, flexible subscription for startups and scale-ups.",
+      "serviceType": "Product Design",
+      "areaServed": "Worldwide",
+      "priceRange": "From 260€/day",
+      "sameAs": ["https://www.linkedin.com/company/umano-design-studio/"]
+    }
+    </script>
+    <script type="module" crossorigin src="/assets/index-CYPjG6Sd.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-Dw2cE7zH.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-react-DZDGgP02.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-Dz2SSYTm.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

@@ -5,7 +5,14 @@
 html {
   scroll-behavior: smooth;
   background-color: #000;
-  font-size: 18px; /* Increases base text size across the site for better visibility */
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
 }
 
 @custom-variant dark (&:is(.dark *));

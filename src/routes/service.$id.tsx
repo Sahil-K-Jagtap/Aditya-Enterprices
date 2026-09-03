@@ -75,7 +75,7 @@ function ServiceDetailPage() {
         <Link
           to="/"
           hash="services"
-          className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-medium text-black transition-transform hover:scale-[1.03]"
+          className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-medium text-black transition-transform hover:scale-[1.03] active:scale-[0.97]"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to services
@@ -86,37 +86,38 @@ function ServiceDetailPage() {
 
   // Get related services (excluding the current one)
   const related = servicesData.filter((s) => s.slug !== service.slug).slice(0, 3);
+  const totalSlides = 1 + service.gallery.length;
 
   const benefitIcons = [Shield, Sparkles, Layers, Factory];
 
   return (
     <main key={id} className="bg-black text-white">
       {/* ── Hero Banner ── */}
-      <section className="relative h-[70vh] min-h-[500px] w-full overflow-hidden">
+      <section className="relative h-[55vh] sm:h-[70vh] min-h-[380px] sm:min-h-[500px] w-full overflow-hidden">
         <img
           src={service.image}
           alt={service.title}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30" />
-        <div className="absolute inset-0 flex flex-col items-start justify-end px-6 pb-16 md:px-16 lg:px-24">
+        <div className="absolute inset-0 flex flex-col items-start justify-end px-4 pb-10 sm:px-6 sm:pb-16 md:px-16 lg:px-24">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             <Link
               to="/"
               hash="services"
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80 backdrop-blur-xl transition-colors hover:bg-white/10"
+              className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/80 backdrop-blur-xl transition-colors hover:bg-white/10 active:scale-95"
             >
               <ArrowLeft className="h-3 w-3" />
               All Services
             </Link>
-            <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight md:text-6xl">
+            <h1 className="max-w-3xl text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
               {service.title}
             </h1>
-            <p className="mt-4 max-w-2xl text-lg font-medium text-white/70 md:text-xl">
+            <p className="mt-3 sm:mt-4 max-w-2xl text-sm sm:text-lg md:text-xl font-medium text-white/70">
               {service.tagline}
             </p>
           </motion.div>
@@ -124,127 +125,171 @@ function ServiceDetailPage() {
       </section>
 
       {/* ── Detailed Description ── */}
-      <section className="mx-auto max-w-5xl px-6 py-24 md:px-16">
+      <section className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-24 md:px-16">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-white/70">
+            <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
             Overview
-          </span>
-          <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+          </div>
+          <h2 className="mt-4 text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
             What is{" "}
-            <span className="bg-gradient-to-r from-white via-white/70 to-white/40 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white via-white/80 to-white/40 bg-clip-text text-transparent">
               {service.title}?
             </span>
           </h2>
-          <p className="mt-8 text-xl leading-relaxed text-white/80">
+          <p className="mt-5 sm:mt-8 text-sm sm:text-xl leading-relaxed text-white/80">
             {service.longDesc}
           </p>
         </motion.div>
       </section>
 
       {/* ── Process Media Carousel ── */}
-      <section className="relative overflow-hidden bg-[#050505] px-6 py-24 md:px-16">
+      <section className="relative overflow-hidden bg-[#050505] px-4 py-14 sm:px-6 sm:py-24 md:px-16">
         <div className="mx-auto max-w-6xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-12"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-8 sm:mb-12"
           >
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-white/70">
+              <span className="h-1.5 w-1.5 rounded-full bg-rose-400 animate-pulse" />
               Gallery & Process
-            </span>
-            <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+            </div>
+            <h2 className="mt-4 text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
               See it in action
             </h2>
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
+            initial={{ opacity: 0, scale: 0.97 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="group relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/60 aspect-video bg-black/50"
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col gap-3 md:flex-row md:gap-0"
           >
-            <div className="overflow-hidden h-full w-full" ref={emblaRef}>
-              <div className="flex h-full w-full touch-pan-y">
-                
-                {/* 1. Video Slide */}
-                <div className="relative h-full min-w-0 shrink-0 grow-0 basis-full">
-                  <video
-                    key={service.video}
-                    src={service.video}
-                    autoPlay
-                    loop
-                    muted={true}
-                    playsInline
-                    onCanPlay={(e) => {
-                      const video = e.target as HTMLVideoElement;
-                      video.play().catch(console.error);
-                    }}
-                    className="h-full w-full object-cover"
-                  >
-                    <p className="p-8 text-center text-white/50">
-                      Video of the {service.title.toLowerCase()} process will appear here.
-                    </p>
-                  </video>
-                </div>
-                
-                {/* 2. Image Slides */}
-                {service.gallery.map((img, i) => (
-                  <div key={img + i} className="relative h-full min-w-0 shrink-0 grow-0 basis-full flex items-center justify-center bg-black/80">
-                    <img 
-                      src={img} 
-                      alt={`${service.title} example ${i + 1}`}
-                      className="h-full w-full object-contain p-4"
-                    />
+            {/* Main Viewer */}
+            <div className="group relative flex-1 overflow-hidden rounded-2xl sm:rounded-3xl md:rounded-r-none border border-white/10 md:border-r-0 shadow-2xl shadow-black/60 bg-black/50" style={{ aspectRatio: '16 / 9', minHeight: '220px', maxHeight: '520px' }}>
+              <div className="overflow-hidden h-full w-full" ref={emblaRef}>
+                <div className="flex h-full w-full touch-pan-y">
+                  
+                  {/* 1. Video Slide */}
+                  <div className="relative h-full min-w-0 shrink-0 grow-0 basis-full">
+                    <video
+                      key={service.video}
+                      src={service.video}
+                      autoPlay
+                      loop
+                      muted={true}
+                      playsInline
+                      onCanPlay={(e) => {
+                        const video = e.target as HTMLVideoElement;
+                        video.play().catch(console.error);
+                      }}
+                      className="h-full w-full object-cover"
+                    >
+                      <p className="p-8 text-center text-white/50">
+                        Video of the {service.title.toLowerCase()} process will appear here.
+                      </p>
+                    </video>
                   </div>
-                ))}
+                  
+                  {/* 2. Image Slides */}
+                  {service.gallery.map((img, i) => (
+                    <div key={img + i} className="relative h-full min-w-0 shrink-0 grow-0 basis-full flex items-center justify-center bg-black/80">
+                      <img 
+                        src={img} 
+                        alt={`${service.title} example ${i + 1}`}
+                        className="h-full w-full object-contain p-2 sm:p-4"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
+
+              {/* Navigation Arrows (always visible on mobile for discoverability) */}
+              <button 
+                onClick={scrollPrev}
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-md transition-all hover:bg-black/70 hover:scale-110 active:scale-95 sm:opacity-0 sm:group-hover:opacity-100 border border-white/10"
+              >
+                <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
+              </button>
+              <button 
+                onClick={scrollNext}
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-md transition-all hover:bg-black/70 hover:scale-110 active:scale-95 sm:opacity-0 sm:group-hover:opacity-100 border border-white/10"
+              >
+                <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
+              </button>
             </div>
 
-            {/* Navigation Arrows */}
-            <button 
-              onClick={scrollPrev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md opacity-0 transition-all hover:bg-black/60 hover:scale-110 group-hover:opacity-100 border border-white/10"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-            <button 
-              onClick={scrollNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md opacity-0 transition-all hover:bg-black/60 hover:scale-110 group-hover:opacity-100 border border-white/10"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </button>
-          </motion.div>
-
-          {/* Thumbnails */}
-          <div className="mt-6 flex justify-center gap-4 overflow-x-auto pb-4">
-            <button
-              onClick={() => scrollTo(0)}
-              className={`relative h-20 w-32 shrink-0 overflow-hidden rounded-xl border-2 transition-all ${
-                activeMedia === 0 ? "border-white" : "border-white/10 opacity-50 hover:opacity-100"
-              }`}
-            >
-              <div className="absolute inset-0 flex items-center justify-center bg-black/80">
-                <span className="text-xs font-medium">Video</span>
-              </div>
-            </button>
-            {service.gallery.map((img, i) => (
+            {/* Thumbnails — horizontal scroll on mobile, vertical on desktop */}
+            <div className="flex md:flex-col gap-1.5 sm:gap-2 md:gap-0 overflow-x-auto md:overflow-x-visible md:w-28 md:self-stretch rounded-xl sm:rounded-2xl md:rounded-l-none md:rounded-r-3xl border border-white/10 md:border-l-0 bg-white/[0.02] backdrop-blur-xl" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
               <button
-                key={img + i}
-                onClick={() => scrollTo(i + 1)}
-                className={`relative h-20 w-32 shrink-0 overflow-hidden rounded-xl border-2 bg-black transition-all ${
-                  activeMedia === i + 1 ? "border-white" : "border-white/10 opacity-50 hover:opacity-100"
+                onClick={() => scrollTo(0)}
+                className={`relative shrink-0 w-16 h-12 sm:w-20 sm:h-14 md:w-full md:h-auto md:flex-1 md:min-h-0 overflow-hidden transition-all duration-300 ${
+                  activeMedia === 0
+                    ? "bg-white/10 ring-2 ring-white/30 md:ring-0"
+                    : "bg-transparent opacity-60 hover:opacity-100 hover:bg-white/[0.04]"
                 }`}
               >
-                <img src={img} alt={`Thumbnail ${i + 1}`} className="h-full w-full object-cover" />
+                {activeMedia === 0 && (
+                  <motion.div
+                    layoutId="activeThumb"
+                    className="absolute inset-0 border-2 border-white/30 pointer-events-none hidden md:block"
+                    style={{ borderRadius: 0 }}
+                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                  />
+                )}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/70">
+                  <div className="flex flex-col items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-white/80" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    <span className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-white/60">Video</span>
+                  </div>
+                </div>
               </button>
+              {service.gallery.map((img, i) => (
+                <button
+                  key={img + i}
+                  onClick={() => scrollTo(i + 1)}
+                  className={`relative shrink-0 w-16 h-12 sm:w-20 sm:h-14 md:w-full md:h-auto md:flex-1 md:min-h-0 overflow-hidden transition-all duration-300 md:border-t md:border-white/[0.06] ${
+                    activeMedia === i + 1
+                      ? "bg-white/10 ring-2 ring-white/30 md:ring-0"
+                      : "bg-transparent opacity-60 hover:opacity-100 hover:bg-white/[0.04]"
+                  }`}
+                >
+                  {activeMedia === i + 1 && (
+                    <motion.div
+                      layoutId="activeThumb"
+                      className="absolute inset-0 border-2 border-white/30 pointer-events-none hidden md:block"
+                      style={{ borderRadius: 0 }}
+                      transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                    />
+                  )}
+                  <img src={img} alt={`Thumbnail ${i + 1}`} className="h-full w-full object-cover" />
+                </button>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Mobile swipe indicator dots */}
+          <div className="flex items-center justify-center gap-1.5 mt-4 md:hidden">
+            {Array.from({ length: totalSlides }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => scrollTo(i)}
+                className={`rounded-full transition-all duration-300 ${
+                  activeMedia === i 
+                    ? "w-5 h-1.5 bg-white" 
+                    : "w-1.5 h-1.5 bg-white/30"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
             ))}
           </div>
         </div>
@@ -252,46 +297,49 @@ function ServiceDetailPage() {
 
 
       {/* ── Benefits Grid ── */}
-      <section className="bg-[#050505] px-6 py-24 md:px-16">
+      <section className="bg-[#050505] px-4 py-14 sm:px-6 sm:py-24 md:px-16">
         <div className="mx-auto max-w-6xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-12"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-8 sm:mb-12"
           >
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-white/70">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
               Why Choose This
-            </span>
-            <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+            </div>
+            <h2 className="mt-4 text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
               Key advantages
             </h2>
           </motion.div>
 
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-3 sm:gap-6 sm:grid-cols-2">
             {service.benefits.map((b, i) => {
               const Icon = benefitIcons[i % benefitIcons.length];
               return (
                 <motion.div
                   key={b.title}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
+                  viewport={{ once: true, amount: 0.2 }}
                   transition={{
-                    duration: 0.6,
-                    delay: i * 0.1,
+                    duration: 0.5,
+                    delay: i * 0.08,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className="group rounded-3xl border border-white/5 bg-white/[0.02] p-8 transition-all duration-300 hover:border-white/15 hover:bg-white/[0.04]"
+                  className="group flex items-start gap-4 sm:flex-col rounded-2xl sm:rounded-3xl border border-white/5 bg-white/[0.02] p-5 sm:p-8 transition-all duration-300 hover:border-white/15 hover:bg-white/[0.04] active:scale-[0.98]"
                 >
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white transition-all duration-300 group-hover:bg-white group-hover:text-black">
-                    <Icon className="h-6 w-6" />
+                  <div className="shrink-0 flex h-10 w-10 sm:h-12 sm:w-12 sm:mb-2 items-center justify-center rounded-xl sm:rounded-2xl bg-white/10 text-white transition-all duration-300 group-hover:bg-white group-hover:text-black">
+                    <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">{b.title}</h3>
-                  <p className="mt-3 text-base leading-relaxed text-white/80">
-                    {b.desc}
-                  </p>
+                  <div>
+                    <h3 className="text-lg sm:text-2xl font-bold text-white">{b.title}</h3>
+                    <p className="mt-1.5 sm:mt-3 text-xs sm:text-base leading-relaxed text-white/80">
+                      {b.desc}
+                    </p>
+                  </div>
                 </motion.div>
               );
             })}
@@ -301,39 +349,40 @@ function ServiceDetailPage() {
 
 
       {/* ── Applications ── */}
-      <section className="bg-[#050505] px-6 py-24 md:px-16">
+      <section className="bg-[#050505] px-4 py-14 sm:px-6 sm:py-24 md:px-16">
         <div className="mx-auto max-w-5xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-12"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-8 sm:mb-12"
           >
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-white/70">
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
               Industries
-            </span>
-            <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+            </div>
+            <h2 className="mt-4 text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
               Typical applications
             </h2>
           </motion.div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-2.5 sm:gap-4 sm:grid-cols-2">
             {service.applications.map((app, i) => (
               <motion.div
                 key={app}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -14 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{
-                  duration: 0.4,
-                  delay: i * 0.08,
+                  duration: 0.35,
+                  delay: i * 0.05,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="flex items-center gap-4 rounded-2xl border border-white/5 bg-white/[0.02] px-6 py-4 transition-all hover:border-white/15"
+                className="flex items-center gap-3 sm:gap-4 rounded-xl sm:rounded-2xl border border-white/5 bg-white/[0.02] px-4 py-3 sm:px-6 sm:py-4 transition-all hover:border-white/15 active:scale-[0.98]"
               >
-                <CheckCircle2 className="h-5 w-5 shrink-0 text-white/40" />
-                <span className="text-base font-medium text-white/90">{app}</span>
+                <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-white/40" />
+                <span className="text-sm sm:text-base font-medium text-white/90">{app}</span>
               </motion.div>
             ))}
           </div>
@@ -341,39 +390,40 @@ function ServiceDetailPage() {
       </section>
 
       {/* ── Related Services ── */}
-      <section className="mx-auto max-w-6xl px-6 py-24 md:px-16">
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-24 md:px-16">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-12"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-8 sm:mb-12"
         >
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-white/70">
+            <span className="h-1.5 w-1.5 rounded-full bg-violet-400 animate-pulse" />
             Explore More
-          </span>
-          <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+          </div>
+          <h2 className="mt-4 text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
             Other services we offer
           </h2>
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-3 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {related.map((s, i) => (
             <motion.div
               key={s.slug}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.15 }}
               transition={{
-                duration: 0.6,
-                delay: i * 0.1,
+                duration: 0.5,
+                delay: i * 0.08,
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
               <Link
                 to="/service/$id"
                 params={{ id: s.slug }}
-                className="group block overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition-all duration-300 hover:border-white/25 hover:bg-white/[0.06]"
+                className="group block overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-white/[0.03] transition-all duration-300 hover:border-white/25 hover:bg-white/[0.06] active:scale-[0.98]"
               >
                 <div className="relative aspect-[16/9] overflow-hidden">
                   <img
@@ -383,12 +433,12 @@ function ServiceDetailPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 </div>
-                <div className="flex items-center justify-between p-6">
+                <div className="flex items-center justify-between p-4 sm:p-6">
                   <div>
-                    <h3 className="font-semibold text-white">{s.title}</h3>
-                    <p className="mt-1 text-xs text-white/50">{s.tagline}</p>
+                    <h3 className="text-sm sm:text-base font-semibold text-white">{s.title}</h3>
+                    <p className="mt-0.5 sm:mt-1 text-[11px] sm:text-xs text-white/50">{s.tagline}</p>
                   </div>
-                  <ChevronRight className="h-5 w-5 shrink-0 text-white/40 transition-transform group-hover:translate-x-1" />
+                  <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-white/40 transition-transform group-hover:translate-x-1" />
                 </div>
               </Link>
             </motion.div>
