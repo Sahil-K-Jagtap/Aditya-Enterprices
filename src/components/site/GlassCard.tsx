@@ -1,3 +1,5 @@
+"use client";
+
 import type { ReactNode } from "react";
 import { motion, type MotionValue, type MotionStyle } from "framer-motion";
 

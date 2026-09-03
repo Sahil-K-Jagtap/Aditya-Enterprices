@@ -1,5 +1,7 @@
+"use client";
 import { useState, useEffect } from "react";
-import { Link, useRouterState } from "@tanstack/react-router";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ArrowRight, Phone, Mail, MapPin, Menu, X, Globe, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -9,25 +11,25 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "../ui/dialog";
-import popupImg from "../../assets/service-hardanodising.jpg";
+const popupImg = "/assets/service-hardanodising.jpg";
 
 const navLinks = [
-  { to: "/", hash: "home", label: "Home" },
-  { to: "/", hash: "about", label: "About Us" },
-  { to: "/services", hash: undefined, label: "Services" },
-  { to: "/clients", hash: undefined, label: "Our Clients" },
-  { to: "/", hash: "contact", label: "Find Us" },
+  { href: "/#home", label: "Home" },
+  { href: "/#about", label: "About Us" },
+  { href: "/services", label: "Services" },
+  { href: "/clients", label: "Our Clients" },
+  { href: "/#contact", label: "Find Us" },
 ];
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [contactDialogOpen, setContactDialogOpen] = useState(false);
-  const routerState = useRouterState();
+  const pathname = usePathname();
 
   // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
-  }, [routerState.location.pathname, routerState.location.hash]);
+  }, [pathname]);
 
   // Prevent background scroll when mobile menu is open
   useEffect(() => {
@@ -46,7 +48,7 @@ export function Navbar() {
       <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-4 md:px-8">
         <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-black/60 px-4 py-2.5 shadow-2xl shadow-black/60 backdrop-blur-2xl sm:px-6 sm:py-3">
           <Link
-            to="/"
+            href="/#home"
             className="flex items-center justify-center transition-transform hover:scale-105"
           >
             <img
@@ -61,8 +63,7 @@ export function Navbar() {
             {navLinks.map((l) => (
               <li key={l.label}>
                 <Link
-                  to={l.to}
-                  hash={l.hash}
+                  href={l.href}
                   className="text-xs lg:text-sm font-medium text-white/75 transition-colors hover:text-white"
                 >
                   {l.label}
@@ -185,7 +186,7 @@ export function Navbar() {
           >
             {/* Top Bar of Drawer */}
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/#home" onClick={() => setMobileMenuOpen(false)}>
                 <img
                   src="/logo.png"
                   alt="Aditya Enterprises Logo"
@@ -215,8 +216,7 @@ export function Navbar() {
                     transition={{ delay: 0.05 * i, duration: 0.3 }}
                   >
                     <Link
-                      to={l.to}
-                      hash={l.hash}
+                      href={l.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className="group flex items-center justify-between text-3xl font-extrabold tracking-tight text-white/90 transition-colors hover:text-white"
                     >

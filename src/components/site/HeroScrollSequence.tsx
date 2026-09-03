@@ -1,8 +1,9 @@
+"use client";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
-import { Link } from "@tanstack/react-router";
-import heroImg from "../../assets/hero-anodized.jpg";
+import Link from "next/link";
+const heroImg = "/assets/hero-anodized.jpg";
 import { GlassCard } from "./GlassCard";
 
 export function HeroScrollSequence() {
@@ -100,7 +101,7 @@ export function HeroScrollSequence() {
               </p>
               <div className="mt-8 flex flex-row items-center justify-center gap-3 w-auto">
                 <Link
-                  to="/services"
+                  href="/services"
                   className="inline-flex min-h-[48px] w-auto items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-base font-bold text-black shadow-xl shadow-white/10 transition-all hover:scale-[1.03] active:scale-[0.98]"
                 >
                   Explore services
@@ -213,7 +214,7 @@ export function HeroScrollSequence() {
               className="mt-6 flex flex-col w-full max-w-xs gap-3"
             >
               <Link
-                to="/services"
+                href="/services"
                 className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-white px-6 font-bold text-black shadow-lg shadow-white/10 transition-all active:scale-95"
               >
                 Explore services

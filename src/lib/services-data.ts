@@ -1,8 +1,8 @@
-import anodising from "../assets/service-anodising.jpg";
-import brightdip from "../assets/service-brightdip.jpg";
-import hardanodising from "../assets/service-hardanodising.jpg";
-import chromating from "../assets/service-chromating.jpg";
-import blasting from "../assets/service-blasting.jpg";
+const anodising = "/assets/service-anodising.jpg";
+const brightdip = "/assets/service-brightdip.jpg";
+const hardanodising = "/assets/service-hardanodising.jpg";
+const chromating = "/assets/service-chromating.jpg";
+const blasting = "/assets/service-blasting.jpg";
 
 export interface ServiceData {
   slug: string;

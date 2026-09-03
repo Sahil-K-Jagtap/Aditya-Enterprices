@@ -1,3 +1,4 @@
+"use client";
 import { Car, Zap, Sun, Plane, Smartphone, Building2 } from "lucide-react";
 import { motion } from "framer-motion";
 

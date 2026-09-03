@@ -1,6 +1,7 @@
+"use client";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import { servicesData } from "../../lib/services-data";
 
 
@@ -50,8 +51,7 @@ export function ServicesSection() {
               className="group overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl transition-all duration-300 hover:border-white/25 active:scale-[0.98]"
             >
               <Link
-                to="/service/$id"
-                params={{ id: s.slug }}
+                href={`/service/${s.slug}`}
                 className="block"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">

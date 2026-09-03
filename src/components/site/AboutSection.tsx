@@ -1,6 +1,7 @@
+"use client";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 
 const stats = [
   { k: "20", v: "Years in operation" },
@@ -52,7 +53,7 @@ export function AboutSection() {
             </div>
             <div className="flex justify-center lg:col-span-1">
               <Link
-                to="/clients"
+                href="/clients"
                 className="group flex flex-col items-center justify-center gap-4 transition-transform hover:scale-[1.02]"
               >
                 <div className="flex h-32 w-32 items-center justify-center rounded-full border border-white/20 bg-white/5 transition-colors group-hover:bg-white">
