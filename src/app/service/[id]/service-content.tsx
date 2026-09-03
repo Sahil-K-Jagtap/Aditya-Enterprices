@@ -142,7 +142,7 @@ export function ServiceContent({ id }: { id: string }) {
               See it in action
             </h2>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.97 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -154,7 +154,7 @@ export function ServiceContent({ id }: { id: string }) {
             <div className="group relative flex-1 overflow-hidden rounded-2xl sm:rounded-3xl md:rounded-r-none border border-white/10 md:border-r-0 shadow-2xl shadow-black/60 bg-black/50" style={{ aspectRatio: '16 / 9', minHeight: '220px', maxHeight: '520px' }}>
               <div className="overflow-hidden h-full w-full" ref={emblaRef}>
                 <div className="flex h-full w-full touch-pan-y">
-                  
+
                   {/* 1. Video Slide */}
                   <div className="relative h-full min-w-0 shrink-0 grow-0 basis-full">
                     <video
@@ -175,12 +175,12 @@ export function ServiceContent({ id }: { id: string }) {
                       </p>
                     </video>
                   </div>
-                  
+
                   {/* 2. Image Slides */}
                   {service.gallery.map((img, i) => (
                     <div key={img + i} className="relative h-full min-w-0 shrink-0 grow-0 basis-full flex items-center justify-center bg-black/80">
-                      <img 
-                        src={img} 
+                      <img
+                        src={img}
                         alt={`${service.title} example ${i + 1}`}
                         className="h-full w-full object-contain p-2 sm:p-4"
                       />
@@ -190,13 +190,13 @@ export function ServiceContent({ id }: { id: string }) {
               </div>
 
               {/* Navigation Arrows (always visible on mobile for discoverability) */}
-              <button 
+              <button
                 onClick={scrollPrev}
                 className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-md transition-all hover:bg-black/70 hover:scale-110 active:scale-95 sm:opacity-0 sm:group-hover:opacity-100 border border-white/10"
               >
                 <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
               </button>
-              <button 
+              <button
                 onClick={scrollNext}
                 className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-md transition-all hover:bg-black/70 hover:scale-110 active:scale-95 sm:opacity-0 sm:group-hover:opacity-100 border border-white/10"
               >
@@ -208,11 +208,10 @@ export function ServiceContent({ id }: { id: string }) {
             <div className="flex md:flex-col gap-1.5 sm:gap-2 md:gap-0 overflow-x-auto md:overflow-x-visible md:w-28 md:self-stretch rounded-xl sm:rounded-2xl md:rounded-l-none md:rounded-r-3xl border border-white/10 md:border-l-0 bg-white/[0.02] backdrop-blur-xl" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
               <button
                 onClick={() => scrollTo(0)}
-                className={`relative shrink-0 w-16 h-12 sm:w-20 sm:h-14 md:w-full md:h-auto md:flex-1 md:min-h-0 overflow-hidden transition-all duration-300 ${
-                  activeMedia === 0
+                className={`relative shrink-0 w-16 h-12 sm:w-20 sm:h-14 md:w-full md:h-auto md:flex-1 md:min-h-0 overflow-hidden transition-all duration-300 ${activeMedia === 0
                     ? "bg-white/10 ring-2 ring-white/30 md:ring-0"
                     : "bg-transparent opacity-60 hover:opacity-100 hover:bg-white/[0.04]"
-                }`}
+                  }`}
               >
                 {activeMedia === 0 && (
                   <motion.div
@@ -224,7 +223,7 @@ export function ServiceContent({ id }: { id: string }) {
                 )}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/70">
                   <div className="flex flex-col items-center gap-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-white/80" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-white/80" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
                     <span className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-white/60">Video</span>
                   </div>
                 </div>
@@ -233,11 +232,10 @@ export function ServiceContent({ id }: { id: string }) {
                 <button
                   key={img + i}
                   onClick={() => scrollTo(i + 1)}
-                  className={`relative shrink-0 w-16 h-12 sm:w-20 sm:h-14 md:w-full md:h-auto md:flex-1 md:min-h-0 overflow-hidden transition-all duration-300 md:border-t md:border-white/[0.06] ${
-                    activeMedia === i + 1
+                  className={`relative shrink-0 w-16 h-12 sm:w-20 sm:h-14 md:w-full md:h-auto md:flex-1 md:min-h-0 overflow-hidden transition-all duration-300 md:border-t md:border-white/[0.06] ${activeMedia === i + 1
                       ? "bg-white/10 ring-2 ring-white/30 md:ring-0"
                       : "bg-transparent opacity-60 hover:opacity-100 hover:bg-white/[0.04]"
-                  }`}
+                    }`}
                 >
                   {activeMedia === i + 1 && (
                     <motion.div
@@ -259,11 +257,10 @@ export function ServiceContent({ id }: { id: string }) {
               <button
                 key={i}
                 onClick={() => scrollTo(i)}
-                className={`rounded-full transition-all duration-300 ${
-                  activeMedia === i 
-                    ? "w-5 h-1.5 bg-white" 
+                className={`rounded-full transition-all duration-300 ${activeMedia === i
+                    ? "w-5 h-1.5 bg-white"
                     : "w-1.5 h-1.5 bg-white/30"
-                }`}
+                  }`}
                 aria-label={`Go to slide ${i + 1}`}
               />
             ))}
