@@ -1,6 +1,12 @@
 import { Metadata } from "next";
 import { ServiceContent } from "./service-content";
-import { getServiceBySlug } from "../../../lib/services-data";
+import { getServiceBySlug, servicesData } from "../../../lib/services-data";
+
+export function generateStaticParams() {
+  return servicesData.map((service) => ({
+    id: service.slug,
+  }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
