@@ -52,9 +52,9 @@ export function Navbar() {
             className="flex items-center justify-center transition-transform hover:scale-105"
           >
             <img
-              src="/logo.png"
+              src="/logo-white.png"
               alt="Aditya Enterprises Logo"
-              className="h-8 sm:h-10 w-auto scale-[1.2] origin-left object-contain brightness-0 invert"
+              className="h-8 sm:h-10 w-auto scale-[1.2] origin-left object-contain"
             />
           </Link>
 
@@ -88,9 +88,9 @@ export function Navbar() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-[#0a0a0a]/95" />
                   <div className="absolute inset-0 flex items-center justify-center p-8">
                     <img
-                      src="/logo.png"
+                      src="/logo-white.png"
                       alt="Aditya Enterprises Logo"
-                      className="w-[90%] max-w-[280px] -translate-y-8 object-contain drop-shadow-2xl brightness-0 invert"
+                      className="w-[90%] max-w-[280px] -translate-y-8 object-contain drop-shadow-2xl"
                     />
                   </div>
                   <div className="absolute bottom-10 left-8 right-8">
@@ -188,9 +188,9 @@ export function Navbar() {
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <Link href="/#home" onClick={() => setMobileMenuOpen(false)}>
                 <img
-                  src="/logo.png"
+                  src="/logo-white.png"
                   alt="Aditya Enterprises Logo"
-                  className="h-8 w-auto scale-[1.15] origin-left object-contain brightness-0 invert"
+                  className="h-8 w-auto scale-[1.15] origin-left object-contain"
                 />
               </Link>
               <button
